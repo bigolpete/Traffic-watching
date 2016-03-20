@@ -1,6 +1,6 @@
 ﻿using System;
 using System.Configuration;
-using System.Collections.Specialized;
+using System.Collections.Specialized; // For linking the data in App.config
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -19,14 +19,13 @@ namespace JsonGetter
             string googKey = ConfigurationManager.AppSettings.Get("googleKey");
             string origin = ConfigurationManager.AppSettings.Get("origin");
             string destination = ConfigurationManager.AppSettings.Get("destination");
-
             var url = "https://maps.googleapis.com/maps/api/directions/json?origin=" + origin + "&departure_time=now&destination=" + destination + "&key=" + googKey; // Enter the google maps API call
-
             int updateFreq; // How often the update sequence is ran
-            SerialPort serialPort1 = new SerialPort();  // Establishes serial port variable
 
+            SerialPort serialPort1 = new SerialPort();  // Establishes serial port variable
             serialPort1.PortName = GetPort();  // Picks array point for serial
             serialPort1.BaudRate = GetBaud(); // Will chance this to console code eventually.
+
             Console.Write("How many minutes between google API calls : ");
             updateFreq = Convert.ToInt32(Console.ReadLine());
 
@@ -52,9 +51,8 @@ namespace JsonGetter
             Console.Write("The following COM ports were found : ");
             foreach (string y in serialPorts)
             {
-                Console.Write(y + " ");
+                Console.WriteLine(y + " ");
             }
-            Console.WriteLine();
             Console.Write("Please pick a COM port: ");
             string port = Console.ReadLine();
             return port;
@@ -68,9 +66,8 @@ namespace JsonGetter
 
             foreach (int y in serialBaud)
             {
-                Console.Write(y + " ");
+                Console.WriteLine(y + " ");
             }
-            Console.WriteLine();
             Console.Write("Please pick a BAUD rate: ");
             int baud = Convert.ToInt32(Console.ReadLine());
             return baud;
@@ -81,8 +78,7 @@ namespace JsonGetter
             using (var w = new WebClient())
             {
                 var json_data = string.Empty;
-                // attempt to download JSON data as a string
-                try
+                try // attempt to download JSON data as a string
                 {
                     json_data = w.DownloadString(url);
                 }
@@ -97,7 +93,7 @@ namespace JsonGetter
             MapJson.Rootobject _rootJson = _download_serialized_json_data<MapJson.Rootobject>(_url); // Downloads JSON to json variable
             int _routeMinutes = Convert.ToInt32(_rootJson.routes[0].legs[0].duration_in_traffic.value) / 60; // converts the string value of the route duration to int32 
 
-            if (!_serialPort.IsOpen) return; // still doesnt really do anything. 
+            if (!_serialPort.IsOpen) return; // Ends if serial is closed.
             _serialPort.Write(Convert.ToString(_routeMinutes)); // Writes to the serialport as a string (required)
             Console.WriteLine("Traffic from home to work is currently a {0} minute drive.", _routeMinutes); //posts the update for debugging
         }

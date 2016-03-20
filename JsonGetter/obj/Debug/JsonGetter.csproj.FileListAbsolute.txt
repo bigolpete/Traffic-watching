@@ -22,3 +22,11 @@ G:\Documents\Visual Studio 2015\Projects\Traffic-Watcher\JsonGetter\bin\Debug\Js
 G:\Documents\Visual Studio 2015\Projects\Traffic-Watcher\JsonGetter\bin\Debug\Newtonsoft.Json.dll
 G:\Documents\Visual Studio 2015\Projects\Traffic-Watcher\JsonGetter\bin\Debug\Newtonsoft.Json.xml
 G:\Documents\Visual Studio 2015\Projects\Traffic-Watcher\JsonGetter\obj\Debug\JsonGetter.csprojResolveAssemblyReference.cache
+G:\Documents\Visual Studio 2015\Projects\Traffic-watching\JsonGetter\bin\Debug\JsonGetter.exe.config
+G:\Documents\Visual Studio 2015\Projects\Traffic-watching\JsonGetter\obj\Debug\JsonGetter.exe
+G:\Documents\Visual Studio 2015\Projects\Traffic-watching\JsonGetter\obj\Debug\JsonGetter.pdb
+G:\Documents\Visual Studio 2015\Projects\Traffic-watching\JsonGetter\bin\Debug\JsonGetter.exe
+G:\Documents\Visual Studio 2015\Projects\Traffic-watching\JsonGetter\bin\Debug\JsonGetter.pdb
+G:\Documents\Visual Studio 2015\Projects\Traffic-watching\JsonGetter\bin\Debug\Newtonsoft.Json.dll
+G:\Documents\Visual Studio 2015\Projects\Traffic-watching\JsonGetter\bin\Debug\Newtonsoft.Json.xml
+G:\Documents\Visual Studio 2015\Projects\Traffic-watching\JsonGetter\obj\Debug\JsonGetter.csprojResolveAssemblyReference.cache
