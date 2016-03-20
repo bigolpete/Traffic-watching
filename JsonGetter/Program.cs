@@ -1,14 +1,8 @@
 ﻿using System;
 using System.Configuration;
-using System.Collections.Specialized; // For linking the data in App.config
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using Newtonsoft.Json; // Used to make JSON data retrevial easier. Followed from http://www.codeproject.com/Tips/397574/Use-Csharp-to-get-JSON-Data-from-the-Web-and-Map-i 
 using System.Net; // Used to make web requests
 using System.IO.Ports; // Used for serial interface
-using System.Timers; // Used to have code run every X minutes
 
 namespace JsonGetter
 {
@@ -51,8 +45,9 @@ namespace JsonGetter
             Console.Write("The following COM ports were found : ");
             foreach (string y in serialPorts)
             {
-                Console.WriteLine(y + " ");
+                Console.Write(y + " ");
             }
+            Console.WriteLine();
             Console.Write("Please pick a COM port: ");
             string port = Console.ReadLine();
             return port;
@@ -66,8 +61,9 @@ namespace JsonGetter
 
             foreach (int y in serialBaud)
             {
-                Console.WriteLine(y + " ");
+                Console.Write(y + " ");
             }
+            Console.WriteLine();
             Console.Write("Please pick a BAUD rate: ");
             int baud = Convert.ToInt32(Console.ReadLine());
             return baud;
